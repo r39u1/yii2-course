@@ -42,6 +42,10 @@ $config = [
                 ],
             ],
         ],
+        'formatter' => [
+            'class' => 'app\components\PhoneFormatter',
+            'phoneMask' => '# (###) ### ## ##',
+        ],
         'db' => $db,
         /*
         'urlManager' => [
