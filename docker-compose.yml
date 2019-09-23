@@ -5,5 +5,9 @@ services:
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
+      - ./xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    environment:
+      - PHP_ENABLE_XDEBUG=1
+      - PHP_IDE_CONFIG=serverName=Yii2-course
     ports:
       - '8000:80'
