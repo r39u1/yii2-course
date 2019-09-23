@@ -3,16 +3,10 @@
 
 namespace app\models;
 
-use yii\base\Model;
 use yii\data\ArrayDataProvider;
 
-class ProductSearch extends Model
+class ProductSearch extends Product
 {
-    public $id;
-    public $categoryId;
-    public $price;
-    public $hidden;
-
     private $models;
     private $_filtered = false;
 
@@ -22,13 +16,6 @@ class ProductSearch extends Model
         $this->models = $models;
     }
 
-    public function rules()
-    {
-        return [
-            [['id', 'categoryId', 'price', 'hidden'], 'safe'],
-        ];
-    }
-
     public function search($params)
     {
         if ($this->load($params) && $this->validate()) {
@@ -36,14 +23,14 @@ class ProductSearch extends Model
         }
 
         return new ArrayDataProvider([
-            'allModels' => $this->getModels(),
+            'allModels' => $this->filterModels(),
             'sort' => [
                 'attributes' => ['id', 'categoryId', 'price', 'hidden'],
             ]
         ]);
     }
 
-    protected function getModels()
+    protected function filterModels()
     {
         $data = $this->models;
 
@@ -59,7 +46,7 @@ class ProductSearch extends Model
                 if (!empty($this->price)) {
                     $conditions[] = strpos($value['price'], $this->price) !== false;
                 }
-                if (!empty($this->hidden)) {
+                if (isset($this->hidden) && $this->hidden !== '') {
                     $conditions[] = strpos($value['hidden'], $this->hidden) !== false;
                 }
                 return array_product($conditions);

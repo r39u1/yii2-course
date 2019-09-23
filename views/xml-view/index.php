@@ -16,6 +16,9 @@ use yii\grid\GridView;
             'categories' => $categories,
         ],
         'price',
-        'hidden',
+        [
+            'attribute' => 'hidden',
+            'filter' => ['0' => 0, '1' => 1],
+        ],
     ],
 ]) ?>
