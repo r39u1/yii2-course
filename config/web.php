@@ -45,6 +45,7 @@ $config = [
         'formatter' => [
             'class' => 'app\components\PhoneFormatter',
             'phoneMask' => '# (###) ### ## ##',
+            'nullDisplay' => '[нет данных]',
         ],
         'db' => $db,
         /*

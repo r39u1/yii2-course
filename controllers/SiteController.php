@@ -2,13 +2,15 @@
 
 namespace app\controllers;
 
+use app\models\ContactForm;
+use app\models\LoginForm;
+use app\models\Product;
 use Yii;
+use yii\data\ArrayDataProvider;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -124,5 +126,19 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionEmptyGrid()
+    {
+        $models = [];
+        for ($i = 0; $i < 5; $i++) {
+            $models[] = new Product();
+        }
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $models,
+        ]);
+
+        return $this->render('empty-grid', ['dataProvider' => $dataProvider]);
     }
 }
