@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05251a4beeaa8dfa7849f73389718d5f",
+    "content-hash": "60126c272ad8702ef782d19b2a674283",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -78,6 +78,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/summernote",
+            "version": "v0.8.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/summernote/summernote.git",
+                "reference": "82a3f2fe935776f175a43e18628a5265f878ec47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/summernote/summernote/zipball/82a3f2fe935776f175a43e18628a5265f878ec47",
+                "reference": "82a3f2fe935776f175a43e18628a5265f878ec47"
             },
             "type": "bower-asset"
         },
@@ -328,6 +343,48 @@
                 "html"
             ],
             "time": "2019-07-14T18:58:38+00:00"
+        },
+        {
+            "name": "r39u1/yii2-summernote",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/r39u1/yii2-summernote.git",
+                "reference": "5f55dda1458d9b76277365ce5599484b07b6b3de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/r39u1/yii2-summernote/zipball/5f55dda1458d9b76277365ce5599484b07b6b3de",
+                "reference": "5f55dda1458d9b76277365ce5599484b07b6b3de",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/summernote": "0.*",
+                "yiisoft/yii2": "^2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "r39u1\\summernote\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Regul",
+                    "email": "andrew.regul@mail.ru"
+                }
+            ],
+            "description": "Summernote editor widget for Yii2.",
+            "time": "2019-09-29T18:02:57+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
