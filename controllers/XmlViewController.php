@@ -15,8 +15,8 @@ class XmlViewController extends Controller
 {
     public function actionIndex()
     {
-        $products = $this->modelsFromXml(Product::className(), '@app/xml-files/products.xml');
-        $categories = $this->modelsFromXml(Category::className(), '@app/xml-files/categories.xml');
+        $products = $this->modelsFromXml(Product::class, '@app/xml-files/products.xml');
+        $categories = $this->modelsFromXml(Category::class, '@app/xml-files/categories.xml');
 
         $searchModel = new ProductSearch($products);
         $dataProvider = $searchModel->search(Yii::$app->request->get());

@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 ]) ?>
 
 <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'name')->widget(SummernoteWidget::className(), [
+    <?= $form->field($model, 'name')->widget(SummernoteWidget::class, [
         'editorOptions' => [
             'height' => '500',
         ],
