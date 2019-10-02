@@ -45,17 +45,19 @@ $config = [
         'formatter' => [
             'class' => 'app\components\PhoneFormatter',
             'phoneMask' => '# (###) ### ## ##',
-            'nullDisplay' => '[нет данных]',
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+    ],
+    'container' => [
+        'definitions' => [
+            yii\grid\GridView::class => [
+                'formatter' => [
+                    'class' => 'app\components\PhoneFormatter',
+                    'phoneMask' => '# (###) ### ## ##',
+                    'nullDisplay' => '[нет данных]',
+                ],
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
